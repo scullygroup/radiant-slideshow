@@ -1,0 +1,22 @@
+xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
+xml.slideshows(:shownumbers => "true", :slidedelay => "5", :transitiontime =>"1"){
+
+  xml.slides{
+    for image in @left
+      xml.image(:url => image.public_filename, :bucket => image.bucket)
+    end
+  }
+  
+  xml.slides{
+    for image in @middle
+      xml.image(:url => image.public_filename, :bucket => image.bucket)
+    end
+  }
+  
+  xml.slides{
+    for image in @right
+      xml.image(:url => image.public_filename, :bucket => image.bucket)
+    end
+  }
+  
+}

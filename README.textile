@@ -1,0 +1,62 @@
+h1. Radiant CMS portfolio management tool extension
+
+A straight-forward slideshow management gallery that allows for three individual slideshows per page.  By default, they are named left, middle, and right.
+
+h1. Features
+
+* Allows you to create a slideshow gallery in Radiant and display on a page.
+* Loading order of slides can be adjusted using drag-and-drop reordering.
+* Image gallery is pulled-in to the Flash via and XML file produced in the *.rxml views in app/views/slideshows.
+
+h1. Requirements
+
+<p>*SWFObject*</br />
+swfobject, "http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject</p>
+
+<p>*Gems/Plugins*<br /> 
+attachment_fu_, "http://github.com/technoweenie/attachment_fu":http://github.com/technoweenie/attachment_fu</p>
+
+
+Server*
+* imagemagick, "http://www.imagemagick.org/script/index.php":http://www.imagemagick.org/script/index.php
+* rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org
+
+h1. How to Install
+
+Grab the extensions from GitHub and place it in vendor/extensions
+<pre><code>
+  git clone git@github.com:scullygroup/radiant-slideshows.git vendor/extensions/slideshows
+</code></pre>
+
+Run the following commands:
+<pre><code>
+  rake radiant:extenstions:slideshows:migrate
+  rake radiant:extenstions:slideshows:update
+</code></pre>
+
+h1. How to Use
+
+The slideshow is pulled into Flash using a RESTful URL that provides the XML like so:
+<pre><code>/slideshow/:slug</code></pre>
+
+<p>Where <code>:slug</code> is the page slug of the current Radiant Page.</p>
+
+<p>In your template, create a section like the following:
+  <pre><code>
+    <div id="slideshow"></div>
+
+    	<script type="text/javascript" charset="utf-8">
+    	var flashvars = {
+    	    xml_path:"/slideshow/<r:slug/>"
+    	    };
+      var params = {
+          menu: "false",
+          wmode: "transparent"
+          };
+      var attributes = {};
+
+      swfobject.embedSWF("swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
+      </script>
+  </code></pre>
+  
+  <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the slideshow.  This pulls all slides for the current page.</p>
