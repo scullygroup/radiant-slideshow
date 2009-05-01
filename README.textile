@@ -22,13 +22,13 @@ h1. How to Install
 
 Grab the extensions from GitHub and place it in vendor/extensions
 <pre><code>
-  git clone git@github.com:scullygroup/radiant-slideshows.git vendor/extensions/slideshows
+  git clone git@github.com:scullygroup/radiant-slideshow.git vendor/extensions/slideshows
 </code></pre>
 
 Run the following commands:
 <pre><code>
-  rake radiant:extenstions:slideshows:migrate
-  rake radiant:extenstions:slideshows:update
+  rake radiant:extensions:slideshows:migrate
+  rake radiant:extensions:slideshows:update
 </code></pre>
 
 h1. How to Use
