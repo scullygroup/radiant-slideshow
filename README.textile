@@ -39,21 +39,21 @@ The slideshow is pulled into Flash using a RESTful URL that provides the XML lik
 <p>Where <code>:slug</code> is the page slug of the current Radiant Page.</p>
 
 <p>In your template, create a section like the following:
-  <pre><code>
-    <div id="slideshow"></div>
+<pre><code>
+  <div id="slideshow"></div>
 
-    	<script type="text/javascript" charset="utf-8">
-    	var flashvars = {
-    	    xml_path:"/slideshow/<r:slug/>"
-    	    };
-      var params = {
-          menu: "false",
-          wmode: "transparent"
-          };
-      var attributes = {};
+  	<script type="text/javascript" charset="utf-8">
+  	var flashvars = {
+  	    xml_path:"/slideshow/<r:slug/>"
+  	    };
+    var params = {
+        menu: "false",
+        wmode: "transparent"
+        };
+    var attributes = {};
 
-      swfobject.embedSWF("swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
-      </script>
-  </code></pre>
+    swfobject.embedSWF("swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
+    </script>
+</code></pre>
   
   <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the slideshow.  This pulls all slides for the current page.</p>
