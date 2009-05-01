@@ -16,8 +16,7 @@ swfobject, "http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfob
 <p>*Gems/Plugins*<br /> 
 attachment_fu_, "http://github.com/technoweenie/attachment_fu":http://github.com/technoweenie/attachment_fu</p>
 
-
-Server*
+*Server*
 * imagemagick, "http://www.imagemagick.org/script/index.php":http://www.imagemagick.org/script/index.php
 * rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org
 
