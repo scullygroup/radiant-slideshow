@@ -1,4 +1,4 @@
-h1. Radiant CMS Sliseshows Extension
+h1. Radiant CMS Slideshows Extension
 
 A straight-forward slideshow management gallery that allows for three individual slideshows per page.  By default, they are named left, middle, and right.
 
