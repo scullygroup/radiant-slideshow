@@ -1,4 +1,4 @@
-h1. Radiant CMS portfolio management tool extension
+h1. Radiant CMS Sliseshows Extension
 
 A straight-forward slideshow management gallery that allows for three individual slideshows per page.  By default, they are named left, middle, and right.
 
@@ -41,7 +41,6 @@ The slideshow is pulled into Flash using a RESTful URL that provides the XML lik
 <p>In your template, create a section like the following:
 <pre><code>
   <div id="slideshow"></div>
-
   	<script type="text/javascript" charset="utf-8">
   	var flashvars = {
   	    xml_path:"/slideshow/<r:slug/>"
@@ -51,7 +50,6 @@ The slideshow is pulled into Flash using a RESTful URL that provides the XML lik
         wmode: "transparent"
         };
     var attributes = {};
-
     swfobject.embedSWF("swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
     </script>
 </code></pre>
