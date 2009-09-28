@@ -1,0 +1,18 @@
+%h1
+  Remove Slideshow
+%p
+  Are you sure you want to
+  %strong.warning
+    permanently remove
+  the following slideshow?
+%table#links.index{ :cellspacing => "0", :border => "0", :cellpadding => "0" }
+  %tbody
+    %tr.node.level-1
+      %td.slideshow
+        = image('slideshows/slideshow', :alt => 'slideshow-icon')
+        = h @slideshow.title
+- form_tag do
+  %p.buttons
+    %input.button{ :type => "submit", :value => "Delete Slideshow" }
+    or
+    = link_to 'Cancel', slideshow_index_url

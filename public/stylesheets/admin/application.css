@@ -20,57 +20,6 @@ a {color: #000; text-decoration: none;}
 a:visited {color: #000; text-decoration: none;}
 a:hover {color: #000; text-decoration: none;}
 
-#wrapper.user {
-  position:relative;
-  width: 500px;
-  margin: 0 auto;
-}
-
-#logo {font-size: 20px;}
-#logo strong {height: 50px; margin-top: 50px; padding-left: 25px;}
-
-/*************************************************** Nav **/
-#admin-nav ul {
-	clear:both;
-	list-style-type: none;
-	margin-top: 50px;
-	}
-
-#admin-nav ul li {
-	display: inline;
-	padding: 8px;
-	background-color: #990000;
-	color: #a49884;
-	font-weight: bold;
-}
-
-#admin-nav a:link, #admin-nav a:visited, #page-nav a:link, #page-nav a:visited {color: #fff; text-decoration: none;}
-#admin-nav a:hover, #page-nav a:hover {color: #fff; text-decoration: underline;}
-
-#admin-nav li.active {
-	background-color: #ccc;
-	color: #000;
-	border-top: 1px solid #000;
-	border-right: 1px solid #000;
-	border-left: 1px solid #000;
-}
-
-/*************************************************** Main Content **/
-
-#main-content {
-	margin-top:8px;
-	border: 1px solid #3a2510;
-	padding-bottom: 20px;
-	width:99%;
-}
-
-#page-content {
-	float:left;
-	margin-top: 25px;
-	margin-left: 2%;
-	width:80%;
-	}
-
 .content-links ul {
 	list-style-type: none;
 	padding-top:15px;
@@ -84,42 +33,16 @@ a:hover {color: #000; text-decoration: none;}
 		padding: 5px;
 }
 
-#bio p {padding-top: 15px;}
-
-/*************************************************** Projects **/
-#work, #images {
-	position: relative;
-	padding: 10px 10px;
-	z-index: 10;
-	float: left;
-	margin:0;
-}
-
-#work .description{
-	border:1px solid #DDDDDD;
-	background-color:#EEEEEE;
-	padding:15px;
-}
-
-#images {
-	clear:both;
-}
-
-.project-images {
-  float: left;
-  width: 250px;
-}
-
-#image-list {
+#image-list, .image-list {
   margin-top:25px;
   width: 900px; 
   background: url('../images/background.gif') no-repeat top left;
   overflow: hidden;
   padding-bottom: 25px;
-list-style-type: none;
+  list-style-type: none;
   }
 
 #image-list li {
-float: left;
-padding: 5px 10px 0 9px;
+ float: left;
+ padding: 5px 10px 0 9px;
 }

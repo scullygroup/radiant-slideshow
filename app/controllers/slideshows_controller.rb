@@ -2,10 +2,9 @@ class SlideshowsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :route_not_found
   
   no_login_required
-  #radiant_layout 'Slideshow'
   
   def index
-    @slideshows = Image.find(:all)
+    @slideshows = Slide.find(:all)
     render :layout => false
   end
   
@@ -13,9 +12,9 @@ class SlideshowsController < ApplicationController
     @page = Page.find_by_slug(params[:slug])
     @slideshow = Slideshow.find_by_page_id(@page.id)
     
-    @left = @slideshow.images.find_by_left
-    @middle = @slideshow.images.find_by_middle
-    @right = @slideshow.images.find_by_right
+    @left = @slideshow.slides.find_by_left
+    @middle = @slideshow.slides.find_by_middle
+    @right = @slideshow.slides.find_by_right
     
     respond_to do |format|
       format.xml  { render :xml => @slideshows }
@@ -31,7 +30,6 @@ class SlideshowsController < ApplicationController
   
   def route_not_found
     render :text => '', :status => :not_found
-    #redirect_to '/'
   end
   
 end

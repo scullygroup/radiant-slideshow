@@ -1,0 +1,17 @@
+- form_for (:slide, :url => '/admin/slides/create', :html => {:multipart => true}) do |f|
+  = f.hidden_field :slideshow_id, :value => @slideshow.id
+  = f.hidden_field :bucket, :value => bucket
+  Upload Images
+  = f.file_field :slide
+  = f.submit "Upload"
+
+%ul.image-list{ :id => "image-list-#{bucket}" }
+  - @bucket = @slideshow.slides.find(:all, :conditions => ['bucket = ?', bucket])
+  - @bucket.each do |slide|
+    %li{ :class => "position_#{slide.position}", :id => "image_#{slide.id}" }
+      = link_to "#{image_tag("admin/icons-small/delete.png")}", "/admin/slides/remove/#{slide.id}", :confirm => "Are you sure you want to delete this image?"
+      %br
+      = image_tag(slide.slide.url(:thumb))
+
+= sortable_element "image-list-#{bucket}", :url => {:controller => "slideshows", :action => "update_positions", :id => params[:id], :bucket => bucket}, :constraint => false, :complete => visual_effect(:highlight, "image-list-#{bucket}")
+%hr

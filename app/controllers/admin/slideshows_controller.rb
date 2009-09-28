@@ -1,34 +1,30 @@
 class Admin::SlideshowsController < Admin::ResourceController
- #model_class Slideshow
   
   def index
-    @slideshows = Slideshow.find(:all)
+    @slideshows = Slideshow.all
     
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @slideshows }
+      format.html
     end
   end
   
   def show
     @slideshow = Slideshow.find(params[:id])
-    @image = Image.new(params[:image])
+    @slide = Slide.new(params[:slide])
     
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @slideshow }
+      format.html
     end
   end
 
   def new
     @slideshow = Slideshow.new
-    @image = Image.new
+    @slide = Slide.new
     @parent = Page.find_by_url('/')
     @children = @parent.children
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @slideshow }
+      format.html
     end
   end
 
@@ -45,26 +41,21 @@ class Admin::SlideshowsController < Admin::ResourceController
       if @slideshow.save
         flash[:notice] = 'Slideshow was successfully created.'
         format.html { redirect_to('/admin/slideshows') }
-        format.xml  { render :xml => @slideshow, :status => :created, :location => @slideshow }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @slideshow.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   def update
-    #params[:slideshow][:tag_ids] ||= []
     @slideshow = Slideshow.find(params[:id])
 
     respond_to do |format|
       if @slideshow.update_attributes(params[:slideshow])
         flash[:notice] = 'Slideshow was successfully updated.'
         format.html { redirect_to('/admin/slideshows') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @slideshow.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -75,17 +66,16 @@ class Admin::SlideshowsController < Admin::ResourceController
 
     respond_to do |format|
       format.html { redirect_to('/admin/slideshows') }
-      format.xml  { head :ok }
     end
   end
   
   def update_positions
     @slideshow = Slideshow.find(params[:id])
-    @bucket = @slideshow.images.find(:all, :conditions => ['bucket = ?', params[:bucket]])
+    @bucket = @slideshow.slides.find(:all, :conditions => ['bucket = ?', params[:bucket]])
     
-    @bucket.each do |image|
-      image.position = params["image-list-#{image.bucket}"].index(image.id.to_s) + 1
-      image.save
+    @bucket.each do |slide|
+      slide.position = params["image-list-#{slide.bucket}"].index(slide.id.to_s) + 1
+      slide.save
     end
     render :nothing => true
   end

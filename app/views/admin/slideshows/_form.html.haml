@@ -1,0 +1,34 @@
+- include_javascript 'dragdrop'
+- include_stylesheet 'admin/application'
+%h1
+  = action
+  Slideshow
+  - if @slideshow.page_id
+    \:
+    = Page.find(@slideshow.page_id).title
+
+%p
+  %em
+    Arrange the thumbnails by dragging them in the order you wish.
+#slideshow-boxes
+  #left-images
+    %h2
+      Left Slideshow
+    = render :partial => 'buckets', :locals => {:bucket => 'left'}
+  #left-images
+    %h2
+      Middle Slideshow
+    = render :partial => 'buckets', :locals => {:bucket => 'middle'}
+  #left-images
+    %h2
+      Right Slideshow
+    = render :partial => 'buckets', :locals => {:bucket => 'right'}
+#slideshow-page
+  - form_for(:slideshow, :url => "/admin/slideshows/update/#{params[:id]}", :html => {:multipart => true}) do
+    %h2
+      Slideshow Page
+    = select(:slideshow, :page_id, @children.all.collect {|p| [p.title, p.id]})
+    %p.buttons
+      = save_model_button(@slideshow)
+      or
+      = link_to "Cancel", {:action => :index}

@@ -6,17 +6,19 @@ h1. Features
 
 * Allows you to create a slideshow gallery in Radiant and display on a page.
 * Loading order of slides can be adjusted using drag-and-drop reordering.
-* Image gallery is pulled-in to the Flash via and XML file produced in the *.rxml views in app/views/slideshows.
+* Slideshow is pulled-in to the Flash via and XML file produced in the *.rxml views in app/views/slideshows.
 
 h1. Requirements
 
-swfobject, "http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject
+<p>*Imagemagick*<br />
+"http://www.imagemagick.org/script/index.php":http://www.imagemagick.org/script/index.php</p>
 
-attachment_fu_, "http://github.com/technoweenie/attachment_fu":http://github.com/technoweenie/attachment_fu
+<p>*SWFObject*<br />
+"http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject</p>
 
-imagemagick, "http://www.imagemagick.org/script/index.php":http://www.imagemagick.org/script/index.php
-
-rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org
+<p>*Gems/Plugins*<br /> 
+Paperclip, "http://github.com/thoughtbot/paperclip/tree/master":http://github.com/thoughtbot/paperclip/tree/master</p>
+Rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org
 
 h1. How to Install
 
@@ -38,7 +40,12 @@ The slideshow is pulled into Flash using a RESTful URL that provides the XML lik
 
 <p>Where <code>:slug</code> is the page slug of the current Radiant Page.</p>
 
-<p>In your template, create a section like the following:
+In your template, reference swfobject.js:
+<pre><code>
+  <script src="/javascripts/swfobject.js" type="text/javascript"></script>
+</code></pre>
+  
+Then, create a section like the following, wherever you want the slideshow to appear:
 <pre><code>
   <div id="slideshow"></div>
   	<script type="text/javascript" charset="utf-8">

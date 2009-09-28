@@ -1,8 +1,8 @@
 xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
 xml.slideshows(:shownumbers => "true", :slidedelay => "5", :transitiontime =>"1"){
   xml.slides{
-    for image in @slideshows
-      xml.image(:url => image.public_filename)
+    for slide in @slideshows
+      xml.slide(:url => slide.slide.url(:normal))
     end
   }
 }

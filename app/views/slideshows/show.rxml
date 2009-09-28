@@ -2,20 +2,20 @@ xml.instruct! :xml, :version=>"1.0", :encoding=>"UTF-8"
 xml.slideshows(:shownumbers => "true", :slidedelay => "5", :transitiontime =>"1"){
 
   xml.slides{
-    for image in @left
-      xml.image(:url => image.public_filename, :bucket => image.bucket)
+    for slide in @left
+      xml.slide(:url => slide.slide.url(:normal), :bucket => slide.bucket)
     end
   }
   
   xml.slides{
-    for image in @middle
-      xml.image(:url => image.public_filename, :bucket => image.bucket)
+    for slide in @middle
+      xml.slide(:url => slide.slide.url(:normal)e, :bucket => slide.bucket)
     end
   }
   
   xml.slides{
-    for image in @right
-      xml.image(:url => image.public_filename, :bucket => image.bucket)
+    for slide in @right
+      xml.slide(:url => slide.slide.url(:normal), :bucket => slide.bucket)
     end
   }
   

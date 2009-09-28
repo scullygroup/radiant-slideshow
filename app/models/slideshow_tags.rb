@@ -20,15 +20,15 @@ module SlideshowTags
     result
   end
   
-  tag 'images' do |tag|
+  tag 'slides' do |tag|
     tag.expand
   end
   
-  tag 'images:each' do |tag|
+  tag 'slides:each' do |tag|
     result = []
       slideshow = tag.locals.slideshow
-      slideshow.images.each do |image|
-        tag.locals.image = image
+      slideshow.slides.each do |slide|
+        tag.locals.slide = slide
         result << tag.expand
       end
     result
@@ -44,19 +44,19 @@ module SlideshowTags
      %{#{slideshow.body}}
   end
 
-  tag 'images:each:thumb' do |tag|
-      image = tag.locals.image
-      %{#{image.location_relative_path("thumb")}}
+  tag 'slides:each:thumb' do |tag|
+      slide = tag.locals.slide
+      %{#{slide.location_relative_path("thumb")}}
   end
   
-  tag 'images:each:medium' do |tag|
-      image = tag.locals.image
-      %{#{image.location_relative_path("medium")}}
+  tag 'slides:each:medium' do |tag|
+      slide = tag.locals.slide
+      %{#{slide.location_relative_path("medium")}}
   end
   
-  tag 'images:each:image' do |tag|
-      image = tag.locals.image
-      %{#{image.location_relative_path}}
+  tag 'slides:each:slide' do |tag|
+      slide = tag.locals.slide
+      %{#{slide.location_relative_path}}
   end
   
 end

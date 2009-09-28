@@ -1,0 +1,17 @@
+- include_javascript 'dragdrop'
+- include_stylesheet 'admin/application'
+#slideshow
+  %h1.content-title
+    = Page.find(@slideshow.page_id).title
+    Slideshow
+  .content-links
+    %ul
+      %li
+        = link_to "#{image_tag ("admin/icons-small/edit.png", :border =>0, :title => 'Edit')}Edit", "/admin/slideshows/edit/#{params[:id]}"
+      %li
+        = link_to "#{image_tag ("admin/icons-small/delete.png", :border =>0, :title => 'Delete')}Delete", "/admin/slideshows/remove/#{params[:id]}", :confirm => "Are you sure you want to delete this slideshow?"
+%div{ :style => "clear: both" }
+%ul#image-list
+  - @slideshow.slides.each do |slide|
+    %li{ :class => "position_#{slide.position}", :id => "image_#{slide.id}" }
+      = image_tag(slide.slide.url(:thumb))

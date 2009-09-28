@@ -1,18 +1,14 @@
 class CreateTables < ActiveRecord::Migration
   def self.up
-    create_table :images do |t|
-      t.integer :slideshow_id
-      t.string  :bucket
-      t.integer :position
-      t.integer :parent_id
-      t.string  :content_type
-      t.string  :filename
-      t.string  :thumbnail
-      t.integer :size
-      t.integer :width
-      t.integer :height
-      t.integer :order
-      
+    create_table :slides do |t|
+      t.integer   :slideshow_id
+      t.string    :bucket
+      t.integer   :position
+      t.integer   :parent_id
+      t.string    :slide_file_name
+      t.string    :slide_content_type
+      t.integer   :slide_file_size
+      t.datetime  :slide_updated_at
 
       t.timestamps
     end
@@ -25,7 +21,7 @@ class CreateTables < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :images
+    drop_table :slides
     drop_table :slideshows
   end
 end
