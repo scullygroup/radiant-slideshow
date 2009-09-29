@@ -57,7 +57,7 @@ Then, create a section like the following, wherever you want the slideshow to ap
         wmode: "transparent"
         };
     var attributes = {};
-    swfobject.embedSWF("swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
+    swfobject.embedSWF("/swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
     </script>
 </code></pre>
   

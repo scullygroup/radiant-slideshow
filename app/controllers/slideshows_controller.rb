@@ -11,7 +11,6 @@ class SlideshowsController < ApplicationController
   def show
     @page = Page.find_by_slug(params[:slug])
     @slideshow = Slideshow.find_by_page_id(@page.id)
-    
     @left = @slideshow.slides.find_by_left
     @middle = @slideshow.slides.find_by_middle
     @right = @slideshow.slides.find_by_right

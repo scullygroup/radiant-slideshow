@@ -10,7 +10,9 @@ class Admin::SlideshowsController < Admin::ResourceController
   
   def show
     @slideshow = Slideshow.find(params[:id])
-    @slide = Slide.new(params[:slide])
+    @left = @slideshow.slides.find_all_by_bucket("left")
+    @middle = @slideshow.slides.find_all_by_bucket("middle")
+    @right = @slideshow.slides.find_all_by_bucket("right")
     
     respond_to do |format|
       format.html

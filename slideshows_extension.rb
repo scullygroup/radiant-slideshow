@@ -10,9 +10,9 @@ class SlideshowsExtension < Radiant::Extension
     
     #This links to an xml file listing of all the slideshows, defined in the extension tags
     #map.connect 'slideshows', :url => '/slideshows', :controller => "site", :action => "show_page"
-    map.connect 'slideshows', :controller => "slideshows", :action => "index"
-    map.connect 'slideshow/:slug', :controller => "slideshows", :action => "show"
-    map.connect 'slide/:id', :controller => "slideshows", :action => "slide"
+    map.connect '/slideshows', :controller => "slideshows", :action => "index"
+    map.connect '/slideshow/:slug', :controller => "slideshows", :action => "show"
+    map.connect '/slide/:id', :controller => "slideshows", :action => "slide"
     
     map.resources :slideshows
     

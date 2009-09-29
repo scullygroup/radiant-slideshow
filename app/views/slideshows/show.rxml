@@ -9,7 +9,7 @@ xml.slideshows(:shownumbers => "true", :slidedelay => "5", :transitiontime =>"1"
   
   xml.slides{
     for slide in @middle
-      xml.slide(:url => slide.slide.url(:normal)e, :bucket => slide.bucket)
+      xml.slide(:url => slide.slide.url(:normal), :bucket => slide.bucket)
     end
   }
   
