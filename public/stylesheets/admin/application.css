@@ -16,6 +16,9 @@ label, strong {font-weight: bold;}
 
 p {padding-top: 5px;}
 
+.error-with-field input {background-color: #ff0000;}
+.error {color: #ff0000;}
+
 a {color: #000; text-decoration: none;}
 a:visited {color: #000; text-decoration: none;}
 a:hover {color: #000; text-decoration: none;}
