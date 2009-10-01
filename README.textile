@@ -28,7 +28,7 @@ h1. How to Install
 
 Grab the extensions from GitHub and place it in vendor/extensions
 <pre><code>
-  git clone git@github.com:scullygroup/radiant-slideshow.git vendor/extensions/slideshows
+  git clone git://github.com/scullygroup/radiant-slideshow.git vendor/extensions/slideshows
 </code></pre>
 
 Run the following commands:
@@ -48,7 +48,14 @@ In your template, reference swfobject.js:
 <pre><code>
   <script src="/javascripts/swfobject.js" type="text/javascript"></script>
 </code></pre>
-  
+
+Be sure to vendor Paperclip in environment.rb
+<pre><code>
+config.gem 'thoughtbot-paperclip',
+           :lib => 'paperclip',
+           :source => 'http://gems.github.com'
+</pre></code>
+
 Then, create a section like the following, wherever you want the slideshow to appear:
 <pre><code>
   <div id="slideshow"></div>
