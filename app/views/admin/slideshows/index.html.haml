@@ -6,7 +6,7 @@
     = link_to "#{image_tag ("admin/icons-small/add.png")} Add New Slideshow Page", '/admin/slideshows/new'
 - for slideshow in @slideshows
   %h2.content-title
-    = Page.find(slideshow.page_id).title
+    =h Page.find(slideshow.page_id).title
   .content-links
     %ul
       %li
