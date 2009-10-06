@@ -2,9 +2,8 @@ h1. Radiant CMS Slideshows Extension
 
 A straight-forward slideshow management gallery that allows for three individual slideshows per page.  By default, they are named left, middle, and right.
 
-<!--
-  TODO Ability to pass size params to flash object so this can be used with any size contraints
--->
+TODO
+* Ability to pass size params to flash object so this can be used with any size contraints
 
 h1. Features
 
@@ -21,8 +20,8 @@ h1. Requirements
 "http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject</p>
 
 <p>*Gems/Plugins*<br /> 
-Paperclip, "http://github.com/thoughtbot/paperclip/tree/master":http://github.com/thoughtbot/paperclip/tree/master</p>
-Rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org
+Paperclip, "http://github.com/thoughtbot/paperclip/tree/master":http://github.com/thoughtbot/paperclip/tree/master<br />
+Rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org</p>
 
 h1. How to Install
 
@@ -54,7 +53,7 @@ Be sure to vendor Paperclip in environment.rb
 config.gem 'thoughtbot-paperclip',
            :lib => 'paperclip',
            :source => 'http://gems.github.com'
-</pre></code>
+</code></pre>
 
 Then, create a section like the following, wherever you want the slideshow to appear:
 <pre><code>
