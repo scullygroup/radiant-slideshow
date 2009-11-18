@@ -72,3 +72,5 @@ Then, create a section like the following, wherever you want the slideshow to ap
 </code></pre>
   
   <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the slideshow.  This pulls all slides for the current page.</p>
+  
+  Copyright (c) 2009 Scully Group, released under the MIT License
