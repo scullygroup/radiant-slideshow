@@ -2,8 +2,7 @@ h1. Radiant CMS Slideshows Extension
 
 A straight-forward slideshow management gallery that allows for three individual slideshows per page.  By default, they are named left, middle, and right.
 
-TODO
-* Ability to pass size params to flash object so this can be used with any size contraints
+_Note: this version has been updated for Radiant 0.9.x.  If you are using an older version of Radiant, please checkout the 0.8 branch._
 
 h1. Features
 
@@ -50,9 +49,7 @@ In your template, reference swfobject.js:
 
 Be sure to vendor Paperclip in environment.rb
 <pre><code>
-config.gem 'thoughtbot-paperclip',
-           :lib => 'paperclip',
-           :source => 'http://gems.github.com'
+config.gem 'paperclip'
 </code></pre>
 
 Then, create a section like the following, wherever you want the slideshow to appear:
@@ -73,4 +70,4 @@ Then, create a section like the following, wherever you want the slideshow to ap
   
   <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the slideshow.  This pulls all slides for the current page.</p>
   
-  Copyright (c) 2009 Scully Group, released under the MIT License
+  Copyright (c) 2010 Scully Group, released under the MIT License

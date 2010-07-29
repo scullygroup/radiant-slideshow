@@ -1,4 +1,4 @@
-module SlideshowTags
+module SlideshowsTags
   include Radiant::Taggable
   
   ###############################################################################################

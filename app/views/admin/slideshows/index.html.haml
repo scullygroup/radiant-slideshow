@@ -3,16 +3,16 @@
   Slideshows
 #new-page
   %p
-    = link_to "#{image_tag ("admin/icons-small/add.png")} Add New Slideshow Page", '/admin/slideshows/new'
+    = link_to "#{image_tag ("admin/icons-small/add.png")} Add New Slideshow Page", admin_slideshow_new_path
 - for slideshow in @slideshows
   %h2.content-title
     =h Page.find(slideshow.page_id).title
   .content-links
     %ul
       %li
-        = link_to "#{image_tag ("admin/icons-small/ok.png", :border =>0, :title => 'Slides')}Slides", slideshow_show_url(:id => slideshow.id)
+        = link_to "#{image_tag ("admin/icons-small/ok.png", :border => 0, :title => 'Slides')}Slides", admin_slideshow_show_path(slideshow)
       %li
-        = link_to "#{image_tag ("admin/icons-small/edit.png", :border =>0, :title => 'Edit')}Edit", slideshow_edit_url(:id => slideshow.id)
+        = link_to "#{image_tag ("admin/icons-small/edit.png", :border => 0, :title => 'Edit')}Edit", admin_slideshow_edit_path(slideshow.id)
       %li
-        = link_to "#{image_tag ("admin/icons-small/delete.png", :border =>0, :title => 'Delete')}Delete", slideshow_remove_url(:id => slideshow.id), :confirm => "Are you sure you want to delete this slideshow?"
+        = link_to "#{image_tag ("admin/icons-small/delete.png", :border => 0, :title => 'Delete')}Delete", admin_slideshow_remove_path(slideshow.id), :confirm => "Are you sure you want to delete this slideshow?"
   %div{ :style => "clear: both" }
