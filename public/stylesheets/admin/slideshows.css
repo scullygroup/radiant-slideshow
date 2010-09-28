@@ -34,13 +34,13 @@ a:hover {color: #000; text-decoration: none;}
 #image-list, .image-list {
   margin-top:25px;
   width: 900px; 
-  background: url('../images/background.gif') no-repeat top left;
+  background: url('/images/background.gif') no-repeat top left;
   overflow: hidden;
   padding-bottom: 25px;
   list-style-type: none;
-  }
+}
 
-#image-list li {
+#image-list li, .image-list li {
  float: left;
  padding: 5px 10px 0 9px;
 }
